@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Менеджер паролей" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="118" Grid.Row="0"/>
+        <TextBox TextWrapping="Wrap" Name="textSer" Text="" Margin="100,104,67,296" Grid.Row="0"/>
+        <TextBox TextWrapping="Wrap" Name="textLog" Text=""  Margin="100,150,67,250" Grid.Row="0"/>
+        <TextBox TextWrapping="Wrap" Name="textPas" Text=""  Margin="100,200,67,200" Grid.Row="0"/>
+        <Label Content="Сервис" HorizontalAlignment="Left" Margin="40,104,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="40,208,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
+        <Button Content="Сохранить" Name="Button1" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" Height="45" Width="100" Click="Button_Click" Grid.Row="0"/>
+
+        <DataGrid Name="masPas" AutoGenerateColumns="True" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Сервис" Binding="{Binding Ser}" Width="30*"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Log}" Width="30*"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Pas}" Width="30*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Cохранить в файл" Name="Button2" HorizontalAlignment="Center" Margin="0,339,0,0" VerticalAlignment="Top" Height="45" Width="118" Click="Button2_Click"/>
+    </Grid>
+</Window>

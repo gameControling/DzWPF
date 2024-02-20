@@ -19,7 +19,7 @@
         <Label Content="Сервис" HorizontalAlignment="Left" Margin="40,104,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
         <Label Content="Логин" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="40,208,0,0" VerticalAlignment="Top" Width="55" Grid.Row="0"/>
-        <Button Content="Сохранить" Name="Button1" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" Height="45" Width="100" Click="Button_Click" Grid.Row="0"/>
+        <Button Content="Сохранить" Name="Button1" HorizontalAlignment="Left" Margin="68,267,0,0" VerticalAlignment="Top" Height="45" Width="100" Click="Button_Click" Grid.Row="0"/>
 
         <DataGrid Name="masPas" AutoGenerateColumns="True" Grid.Column="1">
             <DataGrid.Columns>
@@ -29,5 +29,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Cохранить в файл" Name="Button2" HorizontalAlignment="Center" Margin="0,339,0,0" VerticalAlignment="Top" Height="45" Width="118" Click="Button2_Click"/>
+        <Button Content="Удалить" Name="Delete" HorizontalAlignment="Left" Margin="239,267,0,0" VerticalAlignment="Top" Height="45" Width="94" Click="Delete_Click"/>
     </Grid>
 </Window>

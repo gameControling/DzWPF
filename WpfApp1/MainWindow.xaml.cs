@@ -53,11 +53,20 @@ namespace WpfApp1
         {
             if(textSer.Text != "" && textLog.Text != "" && textPas.Text != "")
             {
-                masPas.Items.Add(new Serves(textSer.Text, textLog.Text, textPas.Text));
+                if(proverka())
+                {
+                    masPas.Items.Add(new Serves(textSer.Text, textLog.Text, textPas.Text));
 
-                textSer.Text = "";
-                textLog.Text = "";
-                textPas.Text = "";
+                    textSer.Text = "";
+                    textLog.Text = "";
+                    textPas.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Сервис с таким логином уже существует!!!");
+                    textSer.Background = Brushes.Red;
+                    textLog.Background = Brushes.Red;
+                }
             }
             else
             {
@@ -76,6 +85,18 @@ namespace WpfApp1
             }
         }
 
+        private bool proverka()
+        {
+             foreach(Serves ser in masPas.Items)
+             {
+                 if(textLog.Text == ser.Log && textSer.Text == ser.Ser)
+                 {
+                    return false;
+                 }
+             }
+             return true;
+        }
+
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
             using (StreamWriter file = new StreamWriter(path))
@@ -84,6 +105,14 @@ namespace WpfApp1
                 {
                     file.WriteLine(serves);
                 }
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(masPas.SelectedItem != null)
+            {
+                masPas.Items.Remove(masPas.SelectedItem);
             }
         }
     }
